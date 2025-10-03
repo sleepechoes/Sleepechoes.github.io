@@ -1,27 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Harry - Home (About Me)</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Harry — Home (About Me)</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav>
-        <div><a href="index.html">Home (About Me)</a></div>
-        <div>
-            <a href="projects.html">Projects</a>
-            <a href="socials.html">Socials</a>
-        </div>
-    </nav>
-
-    <div class="container">
-        <h1>Hello, I'm Harry!</h1>
-        <p>Also known as <strong>Sleepechoes</strong> / <strong>Sleepshift</strong>. I use <strong>he/they</strong> pronouns, am <strong>non-binary</strong>, and <strong>pansexual</strong>.</p>
-        <p>I am currently writing a fanfic called <em>Blacked Out Desires</em>. I use <strong>Arch Linux</strong>.</p>
-        <p>Feel free to explore my projects and socials!</p>
-        <a href="projects.html" class="button">See Projects</a>
-        <a href="socials.html" class="button">Visit Socials</a>
+  <nav class="nav">
+    <div class="brand"><a href="index.html">Home (About Me)</a></div>
+    <div class="links">
+      <a href="projects.html">Projects</a>
+      <a href="socials.html">Socials</a>
     </div>
+  </nav>
+
+  <main class="container">
+    <header class="hero">
+      <div class="hero-left">
+        <h1>Harry</h1>
+        <p class="subtitle">aka <strong>Sleepechoes</strong> / <strong>Sleepshift</strong></p>
+        <p class="lead">
+          Hello — I'm Harry. I use <strong>he/they</strong> pronouns, identify as <strong>non-binary</strong> and <strong>pansexual</strong>.
+        </p>
+        <p>
+          I'm a writer (currently working on the fanfic <em>Blacked Out Desires</em>) and a tinkerer — I run <strong>Arch Linux</strong> and love customizing my setup. Lately I’ve gotten really into <strong>Hatsune Miku</strong> and vocaloid culture, so expect some Miku energy here and there.
+        </p>
+
+        <div class="cta-row">
+          <a class="button" href="projects.html">See Projects</a>
+          <a class="button ghost" href="socials.html">View Socials</a>
+        </div>
+
+        <p class="mini">Fun fact: this site is dark-first and built to be clean and fast — made for Firefox users (yes, I tested it).</p>
+      </div>
+
+      <div class="hero-right">
+        <!-- profile card -->
+        <div class="card">
+          <div class="card-title">About me quick facts</div>
+          <ul class="facts">
+            <li><strong>OS</strong> Arch Linux</li>
+            <li><strong>Writing</strong> Blacked Out Desires (ongoing)</li>
+            <li><strong>Pronouns</strong> he / they</li>
+            <li><strong>Orientation</strong> Pansexual</li>
+            <li><strong>Interests</strong> Miku, theming, stories, web</li>
+          </ul>
+          <button class="button small" id="mikuToggle">Toggle Miku joke</button>
+        </div>
+
+        <figure id="mikuWrap" class="miku" aria-hidden="true">
+          <img src="urgay.jpg" alt="Funny Hatsune Miku meme" />
+          <figcaption>miku says hi — goofy meme for the vibe</figcaption>
+        </figure>
+      </div>
+    </header>
+
+    <section class="bio">
+      <h2>Longer bio</h2>
+      <p>
+        I'm Harry — I like good stories, bold aesthetics, and rocking a clean setup. I write fiction that leans adult and experimental; I maintain personal projects and themes, and I love making things look nice without being childish. If you like neon gradients, subtle motion, and mildly chaotic music taste, we’ll get along.
+      </p>
+
+      <p>
+        I post messy stuff to my <a href="https://www.youtube.com/@sleepingwithechoes" target="_blank" rel="noopener">YouTube</a>, keep projects on <a href="https://github.com/sleepingwithechoes" target="_blank" rel="noopener">GitHub</a>, and sometimes embarrass myself on <a href="https://www.tiktok.com/@sleepechoes" target="_blank" rel="noopener">TikTok</a>.
+      </p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Made by Harry • <a href="socials.html">Socials</a> • <a href="projects.html">Projects</a></p>
+  </footer>
+
+  <script>
+    // Miku toggle: starts hidden (aria-hidden true). No password or secrets here.
+    (function(){
+      const btn = document.getElementById('mikuToggle');
+      const wrap = document.getElementById('mikuWrap');
+      let shown = false;
+      btn.addEventListener('click', () => {
+        shown = !shown;
+        wrap.style.display = shown ? 'block' : 'none';
+        wrap.setAttribute('aria-hidden', !shown);
+      });
+      // initial hidden
+      wrap.style.display = 'none';
+    })();
+  </script>
 </body>
 </html>
