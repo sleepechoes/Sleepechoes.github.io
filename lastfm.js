@@ -1,5 +1,5 @@
 const username = "Penguinblade1"; // your Last.fm username
-const apiKey = "YOUR_API_KEY";    // replace with your Last.fm API key
+const apiKey = "30e3c5513776720883d275f6353c8e7b";    // replace with your Last.fm API key
 
 async function fetchNowPlaying() {
   try {
